@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pandora – Loja de Estilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body,
+    html {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Lato', sans-serif;
+      color: #fff;
+      background: #111; /* fundo escuro neutro */
+    }
+
+    /* Cortinas vinho */
+    .curtain {
+      position: fixed;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(135deg, #5B0F1F, #3D0812);
+      box-shadow: inset 0 0 50px #380610;
+      z-index: 5;
+      transition: transform 1.5s ease-in-out;
+    }
+    .curtain.left {
+      left: 0;
+      transform: translateX(0%);
+    }
+    .curtain.right {
+      right: 0;
+      transform: translateX(0%);
+    }
+    body.loaded .curtain.left {
+      transform: translateX(-100%);
+    }
+    body.loaded .curtain.right {
+      transform: translateX(100%);
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 10;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      color: #d4af37;
+      letter-spacing: 2px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #d4af37;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0 20px;
+      z-index: 1;
+      position: relative;
+    }
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #d4af37;
+      text-shadow: 1px 1px 5px #300007;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .hero .btn {
+      padding: 12px 30px;
+      background: #d4af37;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+    .hero .btn:hover {
+      background: #b9972c;
+    }
+
+    section {
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    section h3 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+      color: #d4af37;
+      text-shadow: 1px 1px 5px #300007;
+    }
+    .produtos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .produto {
+      background: #111;
+      border: 1px solid #3d0812;
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(91, 15, 31, 0.7);
+    }
+    .produto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .produto h4 {
+      margin: 10px 0;
+      color: #d4af37;
+    }
+    .produto span {
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      font-size: 14px;
+      color: #d4af37;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      .produtos {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+
+  <header>
+    <h1>Pandora</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="html1.html">História</a>
+      <a href="html2.html">Joias</a>
+      <a href="html3.html">Elogios</a>
+      <a href="html4.html">Aplicativo</a>
+      <a href="html5.html">Localização</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Luxo em cada detalhe</h2>
+    <p>Descubra nossas coleções exclusivas</p>
+    <a href="#produtos" class="btn">Ver Coleção</a>
+  </div>
+
+  <section id="produtos">
+    <h3>Coleções Exclusivas</h3>
+    <div class="produtos">
+      <div class="produto">
+        <img src="https://down-br.img.susercontent.com/file/sg-11134201-23020-z0u7qjaau2mvef" alt="Colar 1" />
+        <h4>Colar Vinho</h4>
+        <span>R$ 299,00</span>
+      </div>
+      <div class="produto">
+        <img src="https://i.pinimg.com/originals/88/8c/58/888c584403cecc3f6281564aea32e99e.jpg" alt="Bracelete" />
+        <h4>Bracelete Elegante</h4>
+        <span>R$ 199,00</span>
+      </div>
+      <div class="produto">
+        <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rbk2-lqfyoxhggucq3b" alt="Anel" />
+        <h4>Anel Luxuoso</h4>
+        <span>R$ 159,00</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2025 Pandora. Todos os direitos reservados.</footer>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>

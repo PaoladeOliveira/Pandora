@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pandora Joias</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .banner {
+      background-image: url('https://www.pandora.net/-/media/Images/Homepage/Homepage-hero-desktop.jpg');
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #b481a0;
+    }
+
+    .produtos, .galeria, .depoimentos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .produto, .foto, .depoimento {
+      width: 300px;
+      padding: 15px;
+      background-color: #fafafa;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    .produto img, .foto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .depoimento {
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      text-align: left;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #b481a0;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Pandora Joias</h1>
+    <p>Beleza e elegância em cada detalhe</p>
+  </header>
+
+  <nav>
+    <a href="#home">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#colecao">Coleção</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="banner" id="home"></div>
+<section id="sobre">
+    <h2>Sobre a Pandora</h2>
+    <p>A Pandora é uma das maiores marcas de joias do mundo, conhecida por sua alta qualidade e designs exclusivos. Seus produtos incluem charms, pulseiras, anéis e colares que captram momentos inesquecíveis.</p>
+    Pandora é uma figura central na mitologia grega, frequentemente associada à famosa "Caixa de Pandora", que simboliza a curiosidade humana e suas consequências. A seguir, apresento um resumo sobre a história de Pandora e sua significativa representação na tradição mitológica grega.
+  </section>
+
+  <section id="colecao">
+    <h2>Coleção Destaque</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="pulseira clássica.jpg" alt="Pulseira Pandora">
+        <p>Pulseira Clássica</p>
+      </div>
+      <div class="produto">
+        <img src="charm.jpg" alt="Charm Pandora">
+        <p>Charm Coração</p>
+      </div>
+      <div class="produto">
+        <img src="anel.jpg" alt="Anel Pandora">
+        <p>Anel Elegância</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <h2>Galeria de Fotos</h2>
+    <div class="galeria">
+      <div class="foto"><img src="pulseira01.jpg" alt="Joia 1"></div>
+      <div class="foto"><img src="pulseira02.jpg" alt="Joia 2"></div>
+      <div class="foto"><img src="colar.jpg" alt="Joia 3"></div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="depoimentos">
+      <div class="depoimento">
+        "Simplesmente maravilhosa! A Pandora sempre surpreende com designs lindos. — Ana Clara"
+      </div>
+      <div class="depoimento">
+        "Comprei para minha esposa e ela amou. Qualidade impecável. — Roberto"
+      </div>
+      <div class="depoimento">
+        "A experiência na loja foi incrível, recomendo a todos. — Juliana"
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <form>
+      <label for="nome">Nome:</nik>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:<nik>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pandora Joias. Todos os direitos reservados.</p>
+    <p>Instagra: @nik_pandora| WhatsApp: (21)979160337</p>
+  </footer>
+
+</body>
+</html

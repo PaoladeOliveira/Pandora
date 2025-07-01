@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elogios dos Clientes – Pandora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: #121212; color: #fff; }
+    header {
+      position: fixed; top: 0; width: 100%;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(0, 0, 0, 0.8); z-index: 1000;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px; letter-spacing: 2px;
+      color: #cfa14a;
+    }
+    nav a {
+      color: #cfa14a;
+      margin-left: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #fff; }
+
+    main {
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      text-align: center;
+      color: #cfa14a;
+      margin-bottom: 40px;
+    }
+
+    .categoria {
+      margin-bottom: 60px;
+    }
+
+    .categoria h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      color: #d4af37;
+      border-left: 5px solid #cfa14a;
+      padding-left: 12px;
+      margin-bottom: 20px;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .depoimento {
+      background: #1f1f1f;
+      border-left: 5px solid #cfa14a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+      font-style: italic;
+      transition: transform 0.3s ease;
+    }
+
+    .depoimento:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(207, 161, 74, 0.4);
+    }
+
+    .depoimento p {
+      margin-bottom: 12px;
+      color: #eee;
+    }
+
+    .depoimento span {
+      font-weight: bold;
+      color: #cfa14a;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #cfa14a;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 10px; padding: 15px 20px; }
+      nav a { margin-left: 10px; font-size: 14px; }
+      h2 { font-size: 2.2rem; }
+      .categoria h3 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pandora</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="html1.html">História</a>
+    <a href="html2.html">Joias</a>
+    <a href="html3.html">Elogios</a>
+    <a href="html4.html">Aplicativo</a>
+    <a href="html5.html">Localização</a>
+  </nav>
+</header>
+
+<main>
+  <h2>O que dizem nossos clientes</h2>
+
+  <section class="categoria">
+    <h3>Depoimentos Reais</h3>
+    <div class="depoimentos-grid">
+      <div class="depoimento">
+        <p>"Comprei uma pulseira e simplesmente amei! A qualidade é impecável e o atendimento foi excelente."</p>
+        <span>– Juliana M., São Paulo</span>
+      </div>
+      <div class="depoimento">
+        <p>"Os charms são ainda mais lindos pessoalmente. Chegaram bem embalados e antes do prazo!"</p>
+        <span>– Rafaela C., Curitiba</span>
+      </div>
+      <div class="depoimento">
+        <p>"O anel Rose é maravilhoso. Brilho incrível e acabamento perfeito. Me senti especial!"</p>
+        <span>– Camila L., Salvador</span>
+      </div>
+      <div class="depoimento">
+        <p>"Já é minha terceira compra na Pandora. Atendimento rápido, tudo de altíssima qualidade."</p>
+        <span>– Fernanda T., Rio de Janeiro</span>
+      </div>
+      <div class="depoimento">
+        <p>"Amei o pingente estrela! Super delicado, combina com tudo. Vou indicar para todas minhas amigas."</p>
+        <span>– Bianca F., Belo Horizonte</span>
+      </div>
+      <div class="depoimento">
+        <p>"O site é fácil de navegar e a experiência foi ótima. Com certeza voltarei a comprar."</p>
+        <span>– Patrícia S., Porto Alegre</span>
+      </div>
+      <div class="depoimento">
+        <p>"Atendimento maravilhoso, me ajudaram em cada etapa da compra. Amei meu colar!"</p>
+        <span>– Renata D., Recife</span>
+      </div>
+      <div class="depoimento">
+        <p>"Fiz um presente personalizado com charms e minha mãe chorou de emoção. Obrigada Pandora!"</p>
+        <span>– Lara G., Campinas</span>
+      </div>
+      <div class="depoimento">
+        <p>"A embalagem é linda, dá pra presentear direto. Produto veio perfeito, super recomendo."</p>
+        <span>– Bruna A., Goiânia</span>
+      </div>
+      <div class="depoimento">
+        <p>"Simplesmente encantada! Produto de luxo com preço justo. Atendimento impecável."</p>
+        <span>– Daniela V., Florianópolis</span>
+      </div>
+      <div class="depoimento">
+        <p>"Meu brinco ponto de luz é meu favorito. Uso todos os dias e ainda está brilhando!"</p>
+        <span>– Letícia K., Vitória</span>
+      </div>
+      <div class="depoimento">
+        <p>"Fiquei impressionada com a qualidade das peças. Tudo veio com certificado e nota. 10/10."</p>
+        <span>– Ana Clara B., Fortaleza</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2025 Pandora. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

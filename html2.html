@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Produtos – Pandora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: #121212; color: #fff; }
+    header {
+      position: fixed; top: 0; width: 100%;
+      padding: 20px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(0, 0, 0, 0.8); z-index: 1000;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px; letter-spacing: 2px;
+      color: #cfa14a;
+    }
+    nav a {
+      color: #cfa14a;
+      margin-left: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #fff; }
+    main {
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem; text-align: center;
+      color: #cfa14a; margin-bottom: 40px;
+    }
+    .categoria {
+      margin-bottom: 60px;
+    }
+    .categoria h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9rem;
+      color: #d4af37;
+      border-left: 5px solid #cfa14a;
+      padding-left: 12px;
+      margin-bottom: 20px;
+    }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .produto {
+      background: #1f1f1f;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .produto:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(207, 161, 74, 0.5);
+    }
+    .produto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .produto-info {
+      padding: 15px 18px;
+    }
+    .produto h4 {
+      font-size: 1.2rem; margin-bottom: 6px;
+      color: #fff;
+    }
+    .preco {
+      color: #cfa14a;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #cfa14a;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 10px; padding: 15px 20px; }
+      nav a { margin-left: 10px; font-size: 14px; }
+      h2 { font-size: 2.2rem; }
+      .categoria h3 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pandora</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="html1.html">História</a>
+    <a href="html2.html">Joias</a>
+    <a href="html3.html">Elogios</a>
+    <a href="html4.html">Aplicativo</a>
+    <a href="html5.html">Localização</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Nossos Produtos</h2>
+
+  <section class="categoria">
+    <h3>Pulseiras</h3>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="https://i1.wp.com/lanaree.com.br/wp-content/uploads/2020/11/pulseira-riviera-classica-prata-925-011038_390-scaled.jpeg?w=1600&ssl=1" alt="Pulseira Prata" />
+        <div class="produto-info">
+          <h4>Pulseira Prata Clássica</h4>
+          <span class="preco">R$ 349,90</span>
+        </div>
+      </div>
+      <div class="produto">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.WRACqNVD1fsRXjlllGLCvAHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pulseira Couro" />
+        <div class="produto-info">
+          <h4>Pulseira de Couro Dupla</h4>
+          <span class="preco">R$ 199,90</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h3>Charms (Berloques)</h3>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="https://www.mundobriller.com.br/media/catalog/product/cache/1/image/840x/9df78eab33525d08d6e5fb8d27136e95/8/9/899790664_berloque-coracao-vazado-prata925-mundobriller.jpg_3.jpg" alt="Charm Coração" />
+        <div class="produto-info">
+          <h4>Charm Coração com Zircônia</h4>
+          <span class="preco">R$ 159,90</span>
+        </div>
+      </div>
+      <div class="produto">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.LqqLU2IlW806psuYYBdE6QHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Charm Família" />
+        <div class="produto-info">
+          <h4>Charm Família Infinita</h4>
+          <span class="preco">R$ 179,90</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h3>Anéis</h3>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.ZOhPGH4VB6xtYrQRpZNnvQHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Anel Rose" />
+        <div class="produto-info">
+          <h4>Anel Pandora Rose Entrelace</h4>
+          <span class="preco">R$ 289,90</span>
+        </div>
+      </div>
+      <div class="produto">
+        <img src="https://tse1.explicit.bing.net/th/id/OIP.e22DGLVpqQq8Eq0V0rZp6wHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Anel Solitário" />
+        <div class="produto-info">
+          <h4>Anel Solitário Brilhante</h4>
+          <span class="preco">R$ 249,90</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h3>Colares</h3>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.FNyhPpdYRoLSPpeFt51ITwHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Colar Ajustável" />
+        <div class="produto-info">
+          <h4>Colar Corrente Ajustável</h4>
+          <span class="preco">R$ 319,90</span>
+        </div>
+      </div>
+      <div class="produto">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.trZlKv-2RTc6-Yhi1af3kQHaHa?r=0&cb=thvnext&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pingente Estrela" />
+        <div class="produto-info">h
+          <h4>Pingente Estrela Cintilante</h4>
+          <span class="preco">R$ 199,90</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categoria">
+    <h3>Brincos</h3>
+    <div class="produtos-grid">
+      <div class="produto">
+        <img src="https://thvnext.bing.com/th/id/OIP.yA6Cq4NOtwaapF5PCNaKewHaHa?r=0&o=7&cb=thvnextrm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brinco Argola" />
+        <div class="produto-info">
+          <h4>Brinco Argola Pandora Shine</h4>
+          <span class="preco">R$ 269,90</span>
+        </div>
+      </div>
+      <div class="produto">
+        <img src="https://thvnext.bing.com/th/id/OIP.astlY9Eg0ZVGKImI3p6ZvQHaHa?r=0&o=7&cb=thvnextrm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Brinco Ponto de Luz" />
+        <div class="produto-info">
+          <h4>Brinco Ponto de Luz</h4>
+          <span class="preco">R$ 149,90</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+      
+</main>
+
+<footer>
+  © 2025 Pandora. Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

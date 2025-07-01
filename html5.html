@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Localização - Pandora Loja</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Nav bar */
+    nav {
+      background-color: #000;
+      border-bottom: 3px solid #cfa14a;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      font-family: 'Montserrat', sans-serif;
+    }
+    nav .logo {
+      font-size: 1.8rem;
+      color: #cfa14a;
+      font-weight: 700;
+      user-select: none;
+      cursor: default;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: #cfa14a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #cfa14a;
+      margin-bottom: 20px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    p {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    /* Container do mapa */
+    .mapa-container {
+      width: 100%;
+      max-width: 900px;
+      height: 450px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(207,161,74,0.6);
+      margin: 0 auto;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        gap: 15px;
+      }
+      main {
+        padding: 20px 15px;
+      }
+      .mapa-container {
+        height: 300px;
+      }
+    }
+  </style>
+<header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="html1.html">História</a>
+  <a href="html2.html">Joias</a>
+  <a href="html3.html">Elogios</a>
+  <a href="html4.html">Aplicativo</a>
+  <a href="html5.html">Localização</a>
+</nav>
+</header>
+
+<main>
+  <h1 id="localizacao">Nossa Localização</h1>
+  <p>Venha nos visitar na nossa loja física! Estamos localizados no coração da cidade, com fácil acesso e estacionamento.</p>
+  
+  <div class="mapa-container">
+    <!-- Mapa do Google Maps incorporado com iframe -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0489203541286!2d-46.6587037844567!3d-23.56403388466942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c40cc86807%3A0x47ecb9a763d6db63!2sAv.%20Paulista%2C%201571%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-200!5e0!3m2!1spt-BR!2sbr!4v1688149303746!5m2!1spt-BR!2sbr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa Pandora Loja"
+    ></iframe>
+  </div>
+</main>
+
+</body>
+</html>

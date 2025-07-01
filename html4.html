@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pandora Loja - Mini App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #121212;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+      z-index: 110;
+      font-family: 'Montserrat', sans-serif;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      gap: 30px;
+    }
+    nav ul li {
+      
+    }
+    nav ul li a {
+      color: #cfa14a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      color: #fff;
+    }
+
+    header {
+      background: #000;
+      padding: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      color: #cfa14a;
+      text-align: center;
+      position: sticky;
+      top: 48px; /* abaixo da nav */
+      z-index: 100;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      margin-top: 120px; /* para compensar nav + header fixos */
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #cfa14a;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .produtos-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .produto {
+      background: #1f1f1f;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+      display: flex;
+      flex-direction: column;
+    }
+    .produto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .produto-info {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .produto-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .preco {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #cfa14a;
+      margin-bottom: 10px;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .actions input[type="number"] {
+      width: 60px;
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .botao-add {
+      background-color: #cfa14a;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #121212;
+      transition: background-color 0.3s ease;
+      flex: 1;
+    }
+    .botao-add:hover {
+      background-color: #fff;
+    }
+    /* Carrinho */
+    #carrinho {
+      background: #222;
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 30px;
+      box-shadow: 0 0 15px rgba(207,161,74,0.5);
+    }
+    #carrinho h3 {
+      color: #cfa14a;
+      margin-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+    }
+    #itens-carrinho {
+      max-height: 250px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+    .item-carrinho {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #444;
+      padding: 8px 0;
+      font-size: 1rem;
+    }
+    .item-carrinho span {
+      color: #fff;
+    }
+    #total {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #cfa14a;
+      text-align: right;
+      margin-bottom: 15px;
+    }
+    #finalizar {
+      background-color: #cfa14a;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #121212;
+      transition: background-color 0.3s ease;
+    }
+    #finalizar:hover {
+      background-color: #fff;
+    }
+    /* Mensagem */
+    #mensagem {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #4caf50;
+      font-weight: 700;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pandora</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="html1.html">História</a>
+    <a href="html2.html">Joias</a>
+    <a href="html3.html">Elogios</a>
+    <a href="html4.html">Aplicativo</a>
+    <a href="html5.html">Localização</a>
+  </nav>
+</header>
+   <h1>Pandora Loja</h1>
+
+<main>
+  <h2>Escolha seus produtos</h2>
+  <div class="produtos-grid" id="produtos-lista">
+    <!-- Produtos serão inseridos aqui pelo JS -->
+  </div>
+
+  <section id="carrinho" style="display:none;">
+    <h3>Carrinho de Compras</h3>
+    <div id="itens-carrinho"></div>
+    <div id="total"></div>
+    <button id="finalizar">Finalizar Compra</button>
+  </section>
+
+  <div id="mensagem"></div>
+</main>
+
+<script>
+  // Produtos - você pode adicionar/editar aqui
+  const produtos = [
+    {
+      id: 1,
+      nome: "Pulseira Prata Clássica",
+      preco: 349.90,
+      img: "https://i1.wp.com/lanaree.com.br/wp-content/uploads/2020/11/pulseira-riviera-classica-prata-925-011038_390-scaled.jpeg?w=1600&ssl=1"
+    },
+    {
+      id: 2,
+      nome: "Charm Família Infinita",
+      preco: 179.90,
+      img: "https://tse2.mm.bing.net/th/id/OIP.LqqLU2IlW806psuYYBdE6QHaHa?pid=ImgDetMain"
+    },
+    {
+      id: 3,
+      nome: "Anel Pandora Rose Entrelace",
+      preco: 289.90,
+      img: "https://tse2.mm.bing.net/th/id/OIP.ZOhPGH4VB6xtYrQRpZNnvQHaHa?pid=ImgDetMain"
+    },
+    {
+      id: 4,
+      nome: "Pingente Estrela Cintilante",
+      preco: 199.90,
+      img: "https://tse2.mm.bing.net/th/id/OIP.trZlKv-2RTc6-Yhi1af3kQHaHa?pid=ImgDetMain"
+    }
+  ];
+
+  // Carrinho (array de objetos {produto, quantidade})
+  let carrinho = [];
+
+  // Referências DOM
+  const produtosLista = document.getElementById('produtos-lista');
+  const carrinhoSection = document.getElementById('carrinho');
+  const itensCarrinhoDiv = document.getElementById('itens-carrinho');
+  const totalDiv = document.getElementById('total');
+  const finalizarBtn = document.getElementById('finalizar');
+  const mensagemDiv = document.getElementById('mensagem');
+
+  // Renderiza produtos na tela
+  function mostrarProdutos() {
+    produtos.forEach(produto => {
+      const card = document.createElement('div');
+      card.classList.add('produto');
+      card.innerHTML = `
+        <img src="${produto.img}" alt="${produto.nome}">
+        <div class="produto-info">
+          <h3>${produto.nome}</h3>
+          <div class="preco">R$ ${produto.preco.toFixed(2).replace('.',',')}</div>
+          <div class="actions">
+            <input type="number" min="1" value="1" id="qtd-${produto.id}">
+            <button class="botao-add" data-id="${produto.id}">Adicionar</button>
+          </div>
+        </div>
+      `;
+      produtosLista.appendChild(card);
+    });
+  }
+
+  // Atualiza visual do carrinho
+  function atualizarCarrinho() {
+    if(carrinho.length === 0) {
+      carrinhoSection.style.display = 'none';
+      mensagemDiv.style.display = 'none';
+      return;
+    }
+    carrinhoSection.style.display = 'block';
+    itensCarrinhoDiv.innerHTML = '';
+
+    let soma = 0;
+    carrinho.forEach(item => {
+      const totalItem = item.quantidade * item.produto.preco;
+      soma += totalItem;
+      const divItem = document.createElement('div');
+      divItem.classList.add('item-carrinho');
+      divItem.innerHTML = `
+        <span>${item.produto.nome} (x${item.quantidade})</span>
+        <span>R$ ${totalItem.toFixed(2).replace('.',',')}</span>
+      `;
+      itensCarrinhoDiv.appendChild(divItem);
+    });
+
+    totalDiv.textContent = `Total: R$ ${soma.toFixed(2).replace('.',',')}`;
+  }
+
+  // Adicionar produto ao carrinho
+  function adicionarAoCarrinho(id, qtd) {
+    const produto = produtos.find(p => p.id === id);
+    if (!produto) return;
+
+    const itemCarrinho = carrinho.find(i => i.produto.id === id);
+    if (itemCarrinho) {
+      itemCarrinho.quantidade += qtd;
+    } else {
+      carrinho.push({ produto, quantidade: qtd });
+    }
+    atualizarCarrinho();
+  }
+
+  // Evento para botões "Adicionar"
+  produtosLista.addEventListener('click', e => {
+    if(e.target.classList.contains('botao-add')) {
+      const id = Number(e.target.getAttribute('data-id'));
+      const inputQtd = document.getElementById(`qtd-${id}`);
+      let qtd = parseInt(inputQtd.value);
+      if (isNaN(qtd) || qtd < 1) {
+        alert('Quantidade inválida!');
+        return;
+      }
+      adicionarAoCarrinho(id, qtd);
+      inputQtd.value = '1';
+      mensagemDiv.style.display = 'none';
+    }
+  });
+
+  // Finalizar compra - aqui apenas simula mensagem
+  finalizarBtn.addEventListener('click', () => {
+    if (carrinho.length === 0) {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+    let msg = 'Compra realizada com sucesso! \nResumo:\n';
+    carrinho.forEach(item => {
+      msg += `${item.produto.nome} x${item.quantidade} - R$ ${(item.produto.preco * item.quantidade).toFixed(2).replace('.',',')}\n`;
+    });
+    const total = carrinho.reduce((acc, item) => acc + item.produto.preco * item.quantidade, 0);
+    msg += `Total: R$ ${total.toFixed(2).replace('.',',')}\n\nObrigado pela preferência!`;
+    alert(msg);
+    carrinho = [];
+    atualizarCarrinho();
+    mensagemDiv.style.display = 'block';
+    mensagemDiv.textContent = 'Compra finalizada! Obrigado :)';
+  });
+
+  // Inicializa app
+  mostrarProdutos();
+  atualizarCarrinho();
+</script>
+
+</body>
+</html>
