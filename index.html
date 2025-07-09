@@ -1,229 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pandora – Loja de Estilo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Tech IA - Inovação com Inteligência Artificial</title>
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body,
-    html {
-      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: white;
       overflow-x: hidden;
-      font-family: 'Lato', sans-serif;
-      color: #fff;
-      background: #111; /* fundo escuro neutro */
-    }
-
-    /* Cortinas vinho */
-    .curtain {
-      position: fixed;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(135deg, #5B0F1F, #3D0812);
-      box-shadow: inset 0 0 50px #380610;
-      z-index: 5;
-      transition: transform 1.5s ease-in-out;
-    }
-    .curtain.left {
-      left: 0;
-      transform: translateX(0%);
-    }
-    .curtain.right {
-      right: 0;
-      transform: translateX(0%);
-    }
-    body.loaded .curtain.left {
-      transform: translateX(-100%);
-    }
-    body.loaded .curtain.right {
-      transform: translateX(100%);
     }
 
     header {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 40px;
-      z-index: 10;
+      background-color: #00ffd0;
+      color: #000;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 0 20px #00ffd0;
     }
+
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      color: #d4af37;
-      letter-spacing: 2px;
+      margin: 0;
+      font-size: 2.5em;
     }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
       margin: 0 15px;
+      color: #000;
       text-decoration: none;
-      color: #d4af37;
       font-weight: bold;
-      transition: color 0.3s;
+      background: #fff;
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: 0.3s;
     }
+
     nav a:hover {
-      color: #fff;
+      background: #000;
+      color: #00ffd0;
     }
 
     .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 60px 20px;
       text-align: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 0 20px;
-      z-index: 1;
-      position: relative;
-    }
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #d4af37;
-      text-shadow: 1px 1px 5px #300007;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .hero .btn {
-      padding: 12px 30px;
-      background: #d4af37;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: background 0.3s;
-    }
-    .hero .btn:hover {
-      background: #b9972c;
     }
 
-    section {
-      padding: 60px 20px;
-      background: rgba(0, 0, 0, 0.7);
+    .hero h2 {
+      font-size: 2em;
+      color: #00ffd0;
     }
-    section h3 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-      font-family: 'Playfair Display', serif;
-      color: #d4af37;
-      text-shadow: 1px 1px 5px #300007;
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 20px auto;
     }
-    .produtos {
+
+    .cards {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 30px;
-    }
-    .produto {
-      background: #111;
-      border: 1px solid #3d0812;
+      justify-content: center;
       padding: 20px;
-      width: 260px;
-      text-align: center;
-      border-radius: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      gap: 20px;
     }
-    .produto:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(91, 15, 31, 0.7);
+
+    .card {
+      background: #1c1c1c;
+      border: 1px solid #00ffd0;
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 0 15px #00ffd088;
+      transition: transform 0.3s;
     }
-    .produto img {
-      width: 100%;
-      border-radius: 8px;
+
+    .card:hover {
+      transform: scale(1.05);
     }
-    .produto h4 {
-      margin: 10px 0;
-      color: #d4af37;
-    }
-    .produto span {
-      color: #d4af37;
-      font-weight: bold;
-      font-size: 1.1rem;
+
+    .card h3 {
+      color: #00ffd0;
     }
 
     footer {
+      background-color: #0a0a0a;
+      padding: 15px;
       text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.8);
-      font-size: 14px;
-      color: #d4af37;
+      color: #999;
+      margin-top: 40px;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-      }
-      .produtos {
-        flex-direction: column;
-        align-items: center;
-      }
+    @keyframes flutuar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .flutuante {
+      animation: flutuar 4s ease-in-out infinite;
     }
   </style>
 </head>
 <body>
 
-  <div class="curtain left"></div>
-  <div class="curtain right"></div>
-
   <header>
-    <h1>Pandora</h1>
+    <h1>Tech IA</h1>
+    <p>Inovação com Inteligência Artificial</p>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="html1.html">História</a>
-      <a href="html2.html">Joias</a>
-      <a href="html3.html">Elogios</a>
-      <a href="html4.html">Aplicativo</a>
-      <a href="html5.html">Localização</a>
+        <a href="index.html">Início</a>
+        <a href="html.1.html">Cursos</a>
+        <a href="html.2.html">Tecnologias</a>
+        <a href="html.3.html">Suporte</a>
+        <a href="html.4.html">Contato</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>Luxo em cada detalhe</h2>
-    <p>Descubra nossas coleções exclusivas</p>
-    <a href="#produtos" class="btn">Ver Coleção</a>
-  </div>
+  <section class="hero flutuante">
+    <h2>Transformando o mundo com IA</h2>
+    <p>Desenvolvemos soluções inteligentes com inteligência artificial para empresas, estudantes e entusiastas da tecnologia. Aqui você encontra aprendizado, inovação e ferramentas inteligentes.</p>
+  </section>
 
-  <section id="produtos">
-    <h3>Coleções Exclusivas</h3>
-    <div class="produtos">
-      <div class="produto">
-        <img src="https://down-br.img.susercontent.com/file/sg-11134201-23020-z0u7qjaau2mvef" alt="Colar 1" />
-        <h4>Colar Vinho</h4>
-        <span>R$ 299,00</span>
-      </div>
-      <div class="produto">
-        <img src="https://i.pinimg.com/originals/88/8c/58/888c584403cecc3f6281564aea32e99e.jpg" alt="Bracelete" />
-        <h4>Bracelete Elegante</h4>
-        <span>R$ 199,00</span>
-      </div>
-      <div class="produto">
-        <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rbk2-lqfyoxhggucq3b" alt="Anel" />
-        <h4>Anel Luxuoso</h4>
-        <span>R$ 159,00</span>
-      </div>
+  <section class="cards">
+    <div class="card">
+      <h3>Assistente Virtual</h3>
+      <p>IA para responder, interagir e automatizar tarefas em tempo real.</p>
+    </div>
+    <div class="card">
+      <h3>Reconhecimento de Imagem</h3>
+      <p>Análise de fotos com inteligência visual para segurança e diagnóstico.</p>
+    </div>
+    <div class="card">
+      <h3>Chatbots Inteligentes</h3>
+      <p>Atendimento 24h com respostas naturais, rápidas e personalizadas.</p>
     </div>
   </section>
 
-  <footer>© 2025 Pandora. Todos os direitos reservados.</footer>
+  <footer>
+    © 2025 Tech IA - Todos os direitos reservados
+  </footer>
 
-  <script>
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
-    });
-  </script>
 </body>
 </html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tecnologias - Plataforma Web Design</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #ff3c78;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 8px #00000080;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 15px;
+      font-size: 1.2rem;
+      padding: 6px 12px;
+      border-radius: 30px;
+      background: #ff8c00cc;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px #ff8c00aa;
+    }
+
+    nav a:hover {
+      background: #ffd500;
+      color: #000;
+      box-shadow: 0 0 20px #ffd500cc;
+    }
+
+    main {
+      flex: 1;
+      padding: 30px;
+      background: #fff0f5;
+      border-radius: 25px 25px 0 0;
+      color: #222;
+      max-width: 960px;
+      margin: 20px auto 60px auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    main section {
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      padding: 25px 20px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      color: #fff;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    main section:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    main section img {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      background: #fff;
+      padding: 5px;
+    }
+
+    main section div {
+      flex: 1;
+    }
+
+    main h2 {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 4px #00000099;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.4;
+      text-shadow: 0 0 3px #00000066;
+    }
+
+    footer {
+      text-align: center;
+      background: #ff3c78;
+      padding: 18px 10px;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
+      letter-spacing: 1.2px;
+    }
+
+    @media (max-width: 600px) {
+      main section {
+        flex-direction: column;
+        text-align: center;
+      }
+      main section img {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💥 Tecnologias Web Modernas</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="html.1.html">Cursos</a>
+        <a href="html.2.html">Tecnologias</a>
+        <a href="html.3.html">Suporte</a>
+        <a href="html.4.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="Ícone HTML5" />
+      <div>
+        <h2>🧱 HTML5</h2>
+        <p>A estrutura da web! Usado para criar o esqueleto das páginas, definindo títulos, textos, links, imagens e formulários.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="Ícone CSS3" />
+      <div>
+        <h2>🎨 CSS3</h2>
+        <p>O estilista dos sites. Controla cores, layouts, fontes, animações e responsividade para todos os tamanhos de tela.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Ícone JavaScript" />
+      <div>
+        <h2>⚡ JavaScript</h2>
+        <p>Linguagem de programação que traz vida e interatividade para as páginas. Botões, animações e APIs usam JavaScript.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="Ícone React" />
+      <div>
+        <h2>⚛️ React.js</h2>
+        <p>Biblioteca poderosa para criar interfaces rápidas, escaláveis e modernas com componentes reutilizáveis.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png" alt="Ícone GitHub" />
+      <div>
+        <h2>🧰 Git & GitHub</h2>
+        <p>Controle de versões e colaboração em projetos de forma profissional. Permite trabalhar em equipe sem perder nada.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Ícone VS Code" />
+      <div>
+        <h2>🖥️ VS Code</h2>
+        <p>Editor de código leve, customizável e com extensões para facilitar a vida do desenvolvedor.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Ícone Figma" />
+      <div>
+        <h2>🎨 Figma</h2>
+        <p>Ferramenta colaborativa de design para protótipos e interfaces, muito usada em times de design e desenvolvimento.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Plataforma Web Design - Todos os direitos reservados.
+  </footer>
+</body>
+</html>
